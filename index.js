@@ -43,4 +43,6 @@ app.post("/cancel", (req, res) => {
     })
   });
 });
-app.listen(port)
+app.listen(port, () => {
+  opn('', {app: ['chrome.exe', '--app="http://localhost:'+port +'"]});
+})
