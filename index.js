@@ -46,13 +46,9 @@ app.post("/cancel", (req, res) => {
     res.status(200).send({
       message: "success"
     });
+    process.exit();
   });
 });
 app.listen(port, () => {
-  opn("", {
-    app: ["Chrome.exe", `--app=http://localhost:${port}`],
-    wait: true
-  })
-    .then(done => console.log("Done"))
-    .catch(err => console.log(err));
+  opn("", {app: ["Chrome.exe", `--app=http://localhost:${port}`]});
 });

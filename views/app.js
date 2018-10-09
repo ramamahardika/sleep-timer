@@ -48,7 +48,7 @@ window.onload = function() {
     document.getElementById("asd").value = "";
   });
   document.getElementById("cancel").addEventListener("click", function(e) {
-    e.preventDefault();
+    e.preventDefault();    
     var XHR = new XMLHttpRequest();
     XHR.open("POST", "http://localhost:5000/cancel");
     XHR.setRequestHeader("Content-Type", "application/json");
@@ -63,6 +63,7 @@ window.onload = function() {
         if (response.message === "success") {
           document.getElementById("notif").textContent = "Canceled";
           document.getElementById("notif").style.visibility = "visible";
+          window.close();
         } else {
           document.getElementById("notif").textContent = "No upcoming shutdown";
           document.getElementById("notif").style.visibility = "visible";
