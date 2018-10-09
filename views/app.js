@@ -1,4 +1,4 @@
-window.onload = function() {
+const app = function() {
   window.resizeTo(380, 236);
   document
     .getElementsByTagName("form")[0]
