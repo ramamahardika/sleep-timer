@@ -5,7 +5,6 @@ const opn = require("opn");
 const app = express();
 const { exec } = require("child_process");
 const port = 5000;
-
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "views")));
 app.engine("pug", require("pug").__express);
